@@ -6,7 +6,7 @@
 FROM python:3.11.4-slim-buster as builder
 
 # set work directory
-WORKDIR /hellow_world
+WORKDIR /hello_world
 
 # set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1

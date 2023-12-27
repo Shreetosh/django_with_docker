@@ -5,7 +5,7 @@ services:
     build:
       context: ./hello_world
       dockerfile: Dockerfile.prod
-    command: gunicorn hello_django.wsgi:application --bind 0.0.0.0:8000
+    command: gunicorn hello_world.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - static_volume:/home/app/web/staticfiles
       - media_volume:/home/app/web/mediafiles
@@ -16,7 +16,7 @@ services:
     depends_on:
       - db
   db:
-    image: postgres:13.0-alpine
+    image: postgres:15
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
